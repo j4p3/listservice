@@ -1,0 +1,41 @@
+@mixin left {
+  .element:first-child {
+    display: fixed;
+    height: 120px;
+    overflow: hidden;
+    @media screen and (min-width: 801px) {
+      display: inherit;
+      height: 100%;
+      overflow: auto;
+    }
+  }
+  .element:nth-child(3) {
+    display: hidden;
+    @media screen and (min-width: 801px) {
+      width: 10%;
+    }
+  }
+}
+
+@mixin right {
+  .element:first-child {
+    display: fixed;
+    height: 120px;
+    overflow: hidden;
+    @media screen and (min-width: 801px) {
+      width: 10%;
+    }
+  }
+}
+
+@mixin element {
+  float: left;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  margin: 5px;
+  padding: 5px;
+  @media screen and (min-width: 801px) {
+    width: 40%;
+  }
+}

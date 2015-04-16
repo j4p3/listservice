@@ -1,3 +1,20 @@
 // Place all the styles related to the Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import 'mixins';
+
+html,body,.wrapper {
+  height: 98%;
+}
+body.posts {
+  .element {
+    @include element;
+  }
+  &.index {
+    @include left;
+  }
+  &.show {
+    @include right;
+  }
+}

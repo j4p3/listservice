@@ -1,0 +1,22 @@
+-full ||= false
+-link ||= false
+
+-if link
+  =link_to post_path(post.id) do
+    div.post
+      h2.subject= post.subject
+      span.author = post.author
+      span.date= post.date
+      -if full
+        p.body= simple_format(post.body)
+      -else
+        p.body= truncate(post.body, length: 360)
+-else
+  div.post
+    h2.subject= post.subject
+    span.author = post.author
+    span.date= post.date
+    -if full
+      p.body= simple_format(post.body)
+    -else
+      p.body= truncate(post.body, length: 360)

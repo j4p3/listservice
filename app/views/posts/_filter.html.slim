@@ -1,0 +1,6 @@
+= form_for_filterrific @filterrific, html: { id: 'post-filters' } do |f|
+  = f.text_field(:search, class: 'filterrific-periodically-observed')
+  = f.select(:mode, @filterrific.select_options[:mode])
+  = f.select(:span, @filterrific.select_options[:span])
+  = f.submit 'Filter'
+  
