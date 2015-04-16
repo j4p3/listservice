@@ -11,14 +11,12 @@ test: &test
   host: localhost
 
 staging:
-  adapter: postgresql
-  database: listservice_staging
-  pool: 5
-  host: localhost
+  adapter: 
+  database: 
+  host: 
 
 production:
-  adapter: postgresql
-  database: listservice_production
-  pool: 5
+  adapter:
+  database:
   host: 
 

@@ -18,4 +18,5 @@
 
 # Ignore environment setup
 .env
-.elasticbeanstalk/
+
+/public/assets/*
