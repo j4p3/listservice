@@ -1,0 +1,15 @@
+[global]
+ApplicationName=listservice
+AwsCredentialFile=/Users/jp/.elasticbeanstalk/aws_credential_file
+DevToolsEndpoint=git.elasticbeanstalk.us-east-1.amazonaws.com
+EnvironmentName=listservice-dev
+EnvironmentType=SingleInstance
+InstanceProfileName=aws-elasticbeanstalk-ec2-role
+OptionSettingFile=/Users/jp/src/listservice/listservice/.elasticbeanstalk/optionsettings.listservice-dev
+RdsDeletionPolicy=Delete
+RdsEnabled=Yes
+RdsSourceSnapshotName=
+Region=us-east-1
+ServiceEndpoint=https://elasticbeanstalk.us-east-1.amazonaws.com
+SolutionStack=64bit Amazon Linux 2015.03 v1.3.0 running Ruby 2.2 (Passenger Standalone)
+
