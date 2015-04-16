@@ -2,6 +2,7 @@
   .element:first-child {
     display: fixed;
     overflow: hidden;
+    height: 220px;
     @media screen and (min-width: 801px) {
       display: inherit;
       height: 100%;
@@ -20,7 +21,9 @@
   .element:first-child {
     display: fixed;
     overflow: hidden;
+    height: 220px;
     @media screen and (min-width: 801px) {
+      height: 100%;
       @include span-columns(2);
     }
   }
