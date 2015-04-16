@@ -1,7 +1,7 @@
 class Post < ActiveRecord::Base
   default_scope { order(date: :asc) }
   filterrific(
-  default_filter_params: { mode: 'pop', span: 'month' },
+  default_filter_params: { mode: 'chron', span: 'month' },
   available_filters: [
     :search,
     :mode,
@@ -19,15 +19,16 @@ class Post < ActiveRecord::Base
 
   # scopes
   def self.search(query)
-    where('body LIKE ?', query)
+    where('body LIKE ? OR subject LIKE ? OR author LIKE ?', "% #{query} %", "% #{query} %", "% #{query} %")
   end
 
   def self.mode(mode)
     mode_map = {
       chron: unscoped.order(date: :asc),
-      pop: unscoped.order('acts_as_disqusable.comments_count')
+      pop: unscoped.order(date: :asc)
+      # pop: order('acts_as_disqusable.comments_count')
     }
-    unscoped
+    mode_map[mode] || mode_map[:chron]
   end
 
   def self.span(span)
@@ -36,7 +37,7 @@ class Post < ActiveRecord::Base
       'week' => where("date > ?", DateTime.now - 1.week),
       'month' => where("date > ?", DateTime.now - 1.month),
       'year' => where("date > ?", DateTime.now - 1.year),
-      'all' => unscoped
+      'all' => where("date < ?", DateTime.now)
     }
     span_map[span] || span_map[:all]
   end
