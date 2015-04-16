@@ -13,11 +13,14 @@ body.posts {
     a.post {
       text-decoration: none;
       color: inherit;
-      border-bottom: 1px solid $base-border-color;
+      &> div {
+        padding: .5em 1em;
+        border-bottom: 1px solid $base-border-color;
+      }
       &:hover {
         color: $action-color;
       }
-      &:last-child {
+      &:last-child > div {
         border-bottom: 0px;
       }
     }
