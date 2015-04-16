@@ -1,7 +1,6 @@
 @mixin left {
   .element:first-child {
     display: fixed;
-    height: 120px;
     overflow: hidden;
     @media screen and (min-width: 801px) {
       display: inherit;
@@ -12,7 +11,7 @@
   .element:nth-child(3) {
     display: hidden;
     @media screen and (min-width: 801px) {
-      width: 10%;
+      @include span-columns(2);
     }
   }
 }
@@ -20,22 +19,26 @@
 @mixin right {
   .element:first-child {
     display: fixed;
-    height: 120px;
     overflow: hidden;
     @media screen and (min-width: 801px) {
-      width: 10%;
+      @include span-columns(2);
     }
   }
 }
 
 @mixin element {
-  float: left;
-  width: 100%;
+  @include span-columns(12);
   height: 100%;
   overflow: auto;
-  margin: 5px;
-  padding: 5px;
+  padding: 2em 1em;
+  border-left: 1px solid $base-border-color;
+  &:first-child {
+    border-left: 0px;
+  }
+  &:last-child {
+    @include omega;
+  }
   @media screen and (min-width: 801px) {
-    width: 40%;
+    @include span-columns(5);
   }
 }

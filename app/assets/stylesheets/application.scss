@@ -1,0 +1,12 @@
+@import 'bourbon';
+@import 'base/base';
+@import 'neat';
+@import 'posts';
+
+body {
+  margin: 1em 0;
+}
+
+h1 a.title {
+  font-size: 2em;
+}

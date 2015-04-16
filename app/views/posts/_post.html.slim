@@ -2,8 +2,8 @@
 -link ||= false
 
 -if link
-  =link_to post_path(post.id) do
-    div.post
+  =link_to post_path(post.id), class: 'post' do
+    div
       h2.subject= post.subject
       span.author = post.author
       span.date= post.date

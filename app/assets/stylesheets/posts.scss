@@ -1,15 +1,26 @@
-// Place all the styles related to the Posts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
 @import 'mixins';
 
 html,body,.wrapper {
+  @include animation(all 0.5s cubic-bezier);
   height: 98%;
+}
+.wrapper {
+
 }
 body.posts {
   .element {
     @include element;
+    a.post {
+      text-decoration: none;
+      color: inherit;
+      border-bottom: 1px solid $base-border-color;
+      &:hover {
+        color: $action-color;
+      }
+      &:last-child {
+        border-bottom: 0px;
+      }
+    }
   }
   &.index {
     @include left;
