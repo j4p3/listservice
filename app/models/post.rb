@@ -1,4 +1,7 @@
 class Post < ActiveRecord::Base
+  extend FriendlyId
+  friendly_id :subject, use: :slugged
+
   default_scope { order(date: :asc) }
   filterrific(
   default_filter_params: { mode: 'chron', span: 'month' },

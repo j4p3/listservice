@@ -31,6 +31,9 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+# Slugs
+gem 'friendly_id', '~> 5.1.0'
+
 # Filtering
 gem 'filterrific', '~> 2.0.4'
 

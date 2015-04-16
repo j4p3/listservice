@@ -3,7 +3,7 @@
 -share ||= false
 
 -if link
-  =link_to post_path(post.id), class: 'post' do
+  =link_to post_path(post), class: 'post' do
     div
       h2.subject= post.subject
       .author = post.author

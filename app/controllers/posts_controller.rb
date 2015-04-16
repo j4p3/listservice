@@ -7,7 +7,7 @@ class PostsController < ApplicationController
       }
     }) or return
     if params[:filterrific]
-      @posts = Post.filterrific_find(@filterrific).paginate(page: params[:page])
+      @posts = Post.friendly.filterrific_find(@filterrific).paginate(page: params[:page])
     else
       @posts = Post.all.paginate(page: params[:page])
     end
@@ -21,7 +21,7 @@ class PostsController < ApplicationController
         span: Post.options_for_span
       }
     }) or return
-    @post = Post.find(params[:id])
+    @post = Post.friendly.find(params[:id])
     render 'posts/show'
   end
 
