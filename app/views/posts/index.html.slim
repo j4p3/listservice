@@ -1,2 +1,5 @@
 .element
-  = render @posts, link: true
+  #posts
+    = render @posts, link: true
+  #infinite-scrolling
+    = will_paginate @posts

@@ -7,9 +7,9 @@ class PostsController < ApplicationController
       }
     }) or return
     if params[:filterrific]
-      @posts = Post.filterrific_find(@filterrific)
+      @posts = Post.filterrific_find(@filterrific).paginate(page: params[:page])
     else
-      @posts = Post.all
+      @posts = Post.all.paginate(page: params[:page])
     end
     render 'posts/index'
   end
