@@ -20,3 +20,5 @@
 .env
 
 /public/assets/*
+
+gems/

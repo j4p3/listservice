@@ -59,7 +59,6 @@ GEM
     columnize (0.9.0)
     debug_inspector (0.0.2)
     disqus_rails (0.0.6)
-      rails
     erubis (2.7.0)
     execjs (2.5.2)
     filterrific (2.0.4)
@@ -189,6 +188,7 @@ DEPENDENCIES
   pg (~> 0.18.1)
   rails (= 4.2.1)
   rails_12factor
+  sass
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   slim-rails (~> 3.0.1)
