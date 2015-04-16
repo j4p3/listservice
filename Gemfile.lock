@@ -51,6 +51,8 @@ GEM
     coffee-script-source (1.9.1.1)
     columnize (0.9.0)
     debug_inspector (0.0.2)
+    disqus_rails (0.0.6)
+      rails
     erubis (2.7.0)
     execjs (2.5.2)
     filterrific (2.0.4)
@@ -116,7 +118,7 @@ GEM
     rake (10.4.2)
     rdoc (4.2.0)
     sass (3.4.13)
-    sass-rails (5.0.3)
+    sass-rails (5.0.2)
       railties (>= 4.0.0, < 5.0)
       sass (~> 3.1)
       sprockets (>= 2.8, < 4.0)
@@ -167,6 +169,7 @@ PLATFORMS
 
 DEPENDENCIES
   byebug
+  disqus_rails (~> 0.0.6)
   filterrific (~> 2.0.4)
   foreman
   jbuilder (~> 2.0)
