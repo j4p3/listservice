@@ -1,0 +1,24 @@
+development:
+  adapter: postgresql
+  database: listservice_dev
+  pool: 5
+  host: localhost
+
+test: &test
+  adapter: postgresql
+  database: listservice_test
+  pool: 5
+  host: localhost
+
+staging:
+  adapter: postgresql
+  database: listservice_staging
+  pool: 5
+  host: localhost
+
+production:
+  adapter: postgresql
+  database: listservice_production
+  pool: 5
+  host: 
+
