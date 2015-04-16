@@ -1,12 +1,13 @@
 -full ||= false
 -link ||= false
+-share ||= false
 
 -if link
   =link_to post_path(post.id), class: 'post' do
     div
       h2.subject= post.subject
-      span.author = post.author
-      span.date= post.date
+      .author = post.author
+      .date= post.date.strftime("%m/%d/%Y")
       -if full
         p.body= simple_format(post.body)
       -else
@@ -14,8 +15,10 @@
 -else
   div.post
     h2.subject= post.subject
-    span.author = post.author
-    span.date= post.date
+    -if share
+      =link_to 'Share', '', class: 'pull-right'
+    .author = post.author
+    .date= post.date.strftime("%m/%d/%Y")
     -if full
       p.body= simple_format(post.body)
     -else
