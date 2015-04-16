@@ -34,6 +34,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Filtering
 gem 'filterrific', '~> 2.0.4'
 
+# Crawling
+gem 'nokogiri', '~> 1.6.6.2'
+
 # Commenting
 gem 'disqus_rails', '~> 0.0.6'
 
