@@ -6,7 +6,7 @@
   =link_to post_path(post), class: 'post' do
     div
       h2.subject= post.subject
-      .author = post.author
+      .author= post.author
       .date= post.date.strftime("%m/%d/%Y")
       -if full
         p.body= simple_format(post.body)
@@ -14,11 +14,12 @@
         p.body= truncate(post.body, length: 360)
 -else
   div.post
-    h2.subject= post.subject
+    h1.subject= post.subject
+    .info
+      .author= post.author
+      .date= post.date.strftime("%m/%d/%Y")
     -if share
-      =link_to 'Share', '', class: 'pull-right'
-    .author = post.author
-    .date= post.date.strftime("%m/%d/%Y")
+      = render_shareable static_link: true, turbolinks: true, buttons: ['reddit', 'twitter', 'tumblr', 'facebook']
     -if full
       p.body= simple_format(post.body)
     -else

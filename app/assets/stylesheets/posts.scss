@@ -1,0 +1,29 @@
+.shareable {
+  @include outer-container;
+  @include underline;
+  .link:nth-child(odd) {
+    @include span-columns(3 of 5);
+  }
+  .link:nth-child(even) {
+    @include span-columns(2 of 5);
+    @include omega;
+  }
+}
+
+.post {
+  @include outer-container;
+  .subject {
+    @include underline;
+    font-size: 1.25em;
+  }
+  .info {
+    @include underline;
+    @include clearfix;
+    .author {
+      @include span-columns(3 of 5);
+    }
+    .date {
+      @include span-columns(2 of 5); 
+    }
+  }
+}

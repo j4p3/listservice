@@ -46,6 +46,9 @@ gem 'nokogiri', '~> 1.6.6.2'
 # Commenting
 gem 'disqus_rails', '~> 0.0.6'
 
+# Sharing
+gem 'shareable', '~> 1.1.4'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

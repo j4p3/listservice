@@ -45,3 +45,7 @@
     @include span-columns(5);
   }
 }
+
+@mixin underline {
+  border-bottom: 1px solid $base-border-color;
+}
