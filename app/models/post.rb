@@ -2,7 +2,7 @@ class Post < ActiveRecord::Base
   extend FriendlyId
   friendly_id :subject, use: :slugged
 
-  default_scope { order(date: :desc) }
+  default_scope { order(sent_date: :desc) }
   filterrific(
   default_filter_params: { mode: 'chron', span: 'month' },
   available_filters: [
@@ -36,11 +36,11 @@ class Post < ActiveRecord::Base
 
   def self.span(span)
     span_map = {
-      'day' => where("date > ?", DateTime.now - 1.day),
-      'week' => where("date > ?", DateTime.now - 1.week),
-      'month' => where("date > ?", DateTime.now - 1.month),
-      'year' => where("date > ?", DateTime.now - 1.year),
-      'all' => where("date < ?", DateTime.now)
+      'day' => where("sent_date > ?", Date.today - 1.day),
+      'week' => where("sent_date > ?", Date.today - 1.week),
+      'month' => where("sent_date > ?", Date.today - 1.month),
+      'year' => where("sent_date > ?", Date.today - 1.year),
+      'all' => where("sent_date < ?", Date.today)
     }
     span_map[span] || span_map[:all]
   end

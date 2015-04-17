@@ -25,6 +25,8 @@ class PostsController < ApplicationController
     @post = Post.friendly.find(params[:id])
     @filter = true
     render 'posts/show'
+  rescue ActiveRecord::RecordNotFound
+    render file: "#{Rails.root}/public/404.html", status: 404, layout: 'application'
   end
 
   private

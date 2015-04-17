@@ -11,8 +11,9 @@ namespace :api do
     bare_links.each do |link|
       begin
         email = JSON.parse(open(base_url + link.split('/')[0..3].join('/') + '.json').read)[0]['post']
-        email['date'] = DateTime.new(*email['date'])
-        unless Post.find_by(date: email[:date])
+        email['sent_date'] = Date.new(*email['date'])
+        email.delete('date')
+        unless Post.find_by(sent_date: email['sent_date'])
           if Post.create(email)
             puts "Loaded #{email['date']} email."
           end

@@ -7,17 +7,17 @@
     div
       h2.subject= post.subject
       .author= post.author
-      .date= post.date.strftime("%m/%d/%Y")
+      .date= post.sent_date.strftime("%m/%d/%Y")
       -if full
         p.body= simple_format(post.body)
       -else
         p.body= truncate(post.body, length: 360)
 -else
   div.post
-    h1.subject= post.subject
-    .info
+    h1.subject.underline= post.subject
+    .info.underline
       .author= post.author
-      .date= post.date.strftime("%m/%d/%Y")
+      .date= post.sent_date.strftime("%m/%d/%Y")
     -if share
       = render_shareable static_link: true, turbolinks: true, buttons: ['reddit', 'twitter', 'tumblr', 'facebook']
     -if full
