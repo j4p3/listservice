@@ -2,7 +2,7 @@ class Post < ActiveRecord::Base
   extend FriendlyId
   friendly_id :subject, use: :slugged
 
-  default_scope { order(date: :asc) }
+  default_scope { order(date: :desc) }
   filterrific(
   default_filter_params: { mode: 'chron', span: 'month' },
   available_filters: [
@@ -27,8 +27,8 @@ class Post < ActiveRecord::Base
 
   def self.mode(mode)
     mode_map = {
-      chron: unscoped.order(date: :asc),
-      pop: unscoped.order(date: :asc)
+      chron: unscoped.order(date: :desc),
+      pop: unscoped.order(date: :desc)
       # pop: order('acts_as_disqusable.comments_count')
     }
     mode_map[mode] || mode_map[:chron]
