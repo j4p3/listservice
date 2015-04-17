@@ -44,6 +44,9 @@ body {
   &.show {
     @include right;
   }
+  &.error {
+    @include left;
+  }
 }
 
 .underline {
