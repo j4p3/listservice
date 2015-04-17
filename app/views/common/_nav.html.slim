@@ -1,6 +1,8 @@
+-filter ||= false
 nav
   h1= link_to 'All the Listserves', posts_path, class: 'title'
-  = render 'posts/filter'
+  -if filter
+    = render 'posts/filter'
   ul
     li= link_to 'share'
-    li= link_to 'about'
+    li= link_to 'about', static_about_path

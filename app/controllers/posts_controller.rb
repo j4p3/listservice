@@ -11,6 +11,7 @@ class PostsController < ApplicationController
     else
       @posts = Post.all.paginate(page: params[:page])
     end
+    @filter = true
     render 'posts/index'
   end
 
@@ -22,6 +23,7 @@ class PostsController < ApplicationController
       }
     }) or return
     @post = Post.friendly.find(params[:id])
+    @filter = true
     render 'posts/show'
   end
 

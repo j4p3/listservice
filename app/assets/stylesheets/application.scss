@@ -1,6 +1,7 @@
 @import 'bourbon';
 @import 'base/base';
 @import 'neat';
+@import 'mixins';
 @import 'posts';
 
 body {
@@ -13,4 +14,34 @@ h1 a.title {
 
 .pull-right {
   float: right;
+}
+
+html,body,.wrapper {
+  @include animation(all 0.5s cubic-bezier);
+  height: 98%;
+}
+body {
+  .element {
+    @include element;
+    a.post {
+      text-decoration: none;
+      color: inherit;
+      &> div {
+        padding: .5em 1em;
+        border-bottom: 1px solid $base-border-color;
+      }
+      &:hover {
+        color: $action-color;
+      }
+      &:last-child > div {
+        border-bottom: 0px;
+      }
+    }
+  }
+  &.index {
+    @include left;
+  }
+  &.show {
+    @include right;
+  }
 }

@@ -10,5 +10,5 @@ html
   body class="#{controller_name} #{action_name}"
     .wrapper
       .element
-        = render 'common/nav'
+        = render 'common/nav', { filter: @filter }
       = yield

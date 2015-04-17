@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'static/about'
   resources :posts, only: [:index, :show]
   root to: 'posts#index'
 

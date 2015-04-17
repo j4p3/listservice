@@ -13,7 +13,7 @@ class Post < ActiveRecord::Base
 
   # select options
   def self.options_for_mode
-    [['Popularity', 'pop'], ['Chronological', 'chron']]
+    [['Chronological', 'chron'], ['Popularity', 'pop']]
   end
 
   def self.options_for_span
