@@ -55,6 +55,7 @@ gem 'shareable', '~> 1.1.4'
 # Heroku deployment config
 gem 'foreman'
 gem 'rails_12factor', group: :production
+gem 'newrelic_rpm', '~> 3.11.2.286'
 
 # Use Unicorn as the app server
 gem 'unicorn', '~> 4.8.3'
