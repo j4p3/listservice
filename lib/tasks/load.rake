@@ -15,10 +15,13 @@ namespace :api do
         email.delete('date')
         unless Post.find_by(sent_date: email['sent_date'])
           if Post.create(email)
-            puts "Loaded #{email['date']} email."
+            puts "api:load - Loaded #{email['sent_date']} email."
           end
+        else
+          puts "api:load - Skipping duplicate #{email['sent_date']} email."
         end
       rescue Exception => e
+        puts "api:load - Exception in #{email['sent_date']} email -\n #{e}"
         puts e
         next
       end

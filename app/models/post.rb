@@ -27,8 +27,8 @@ class Post < ActiveRecord::Base
 
   def self.mode(mode)
     mode_map = {
-      chron: unscoped.order(date: :desc),
-      pop: unscoped.order(date: :desc)
+      chron: unscoped.order(sent_date: :desc),
+      pop: unscoped.order(sent_date: :desc)
       # pop: order('acts_as_disqusable.comments_count')
     }
     mode_map[mode] || mode_map[:chron]
