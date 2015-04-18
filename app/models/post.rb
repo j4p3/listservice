@@ -22,7 +22,7 @@ class Post < ActiveRecord::Base
 
   # scopes
   def self.search(query)
-    where('body LIKE ? OR subject LIKE ? OR author LIKE ?', "% #{query} %", "% #{query} %", "% #{query} %")
+    where('body LIKE ? OR subject LIKE ? OR author LIKE ?', "% #{query} %", "%#{query}%", "%#{query}%")
   end
 
   def self.mode(mode)
