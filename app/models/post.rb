@@ -4,7 +4,7 @@ class Post < ActiveRecord::Base
 
   default_scope { order(sent_date: :desc) }
   filterrific(
-  default_filter_params: { mode: 'chron', span: 'month' },
+  default_filter_params: { mode: 'chron', span: 'all' },
   available_filters: [
     :search,
     :mode,
