@@ -2,11 +2,21 @@
   .element:first-child {
     display: fixed;
     overflow: hidden;
-    height: 220px;
+    height: auto;
+    nav input,select,a.form-control {
+      @include span-columns(2.5 of 5);
+      &:nth-child(odd) {
+        @include omega;
+      }
+    }
     @media screen and (min-width: 801px) {
       display: inherit;
       height: 100%;
       overflow: auto;
+      nav input,select,a.form-control {
+        float: none;
+        width: auto;
+      }
     }
   }
   .element:nth-child(3) {
@@ -33,7 +43,7 @@
   @include span-columns(12);
   height: 100%;
   overflow: auto;
-  padding: 2em 1em;
+  padding: 1em .5em;
   border-left: 1px solid $base-border-color;
   &:first-child {
     border-left: 0px;
@@ -42,7 +52,7 @@
     @include omega;
   }
   @media screen and (min-width: 801px) {
-    @include span-columns(5);
+    @include span-columns(5);padding: 2em 1em;
   }
 }
 

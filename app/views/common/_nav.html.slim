@@ -3,5 +3,4 @@ nav
   h1= link_to 'All the Listserves', posts_path, class: 'title'
   -if filter
     = render 'posts/filter'
-  ul
-    li= link_to 'about', static_about_path
+  = link_to 'about', static_about_path, class: 'form-control'

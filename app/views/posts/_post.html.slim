@@ -11,7 +11,7 @@
       -if full
         p.body= simple_format(post.body)
       -else
-        p.body= truncate(post.body, length: 360)
+        p.body= truncate(post.body, length: 256)
 -else
   div.post
     h1.subject.underline= post.subject
@@ -23,4 +23,4 @@
     -if full
       p.body= simple_format(post.body)
     -else
-      p.body= truncate(post.body, length: 360)
+      p.body= truncate(post.body, length: 256)
