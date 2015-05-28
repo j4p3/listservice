@@ -3,6 +3,15 @@ Rails.application.routes.draw do
   resources :posts, only: [:index, :show]
   root to: 'posts#index'
 
+  namespace :api do
+    get 'posts', to: 'v1/posts', action: :index
+    post 'posts', to: 'v1/posts', action: :create
+    get 'posts/:id', to: 'v1/posts', action: :show
+    namespace :v1 do
+      resources :posts, only: [:index, :show, :create]
+    end
+  end
+
   get '*unmatched_route', to: 'static#four_oh_four'
 
   # The priority is based upon order of creation: first created -> highest priority.

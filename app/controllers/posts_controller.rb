@@ -29,6 +29,9 @@ class PostsController < ApplicationController
     render file: "#{Rails.root}/public/404.html", status: 404, layout: 'application'
   end
 
+  def create
+  end
+
   private
 
     def filterrific_params
