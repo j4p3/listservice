@@ -25,8 +25,14 @@ module Api
         unless filter
           head :unauthorized
         else
-          @post = Post.create(post_params)
-          render json: @post, status: :created
+          unless Post.find_by(sent_date: Date.today)
+            @post = Post.create(post_params)
+            @post.sent_date = Date.today
+            @post.save
+            render json: @post, status: :created
+          else
+            head :unprocessable_entity
+          end
         end
       end
       
