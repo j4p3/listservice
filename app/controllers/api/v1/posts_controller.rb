@@ -28,6 +28,7 @@ module Api
           unless Post.find_by(sent_date: Date.today)
             @post = Post.create(post_params)
             @post.sent_date = Date.today
+            @post.body = @post.body.slice(0..@post.body.rindex('--')-1)
             @post.save
             render json: @post, status: :created
           else
