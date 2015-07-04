@@ -52,6 +52,9 @@ gem 'disqus_rails', '~> 0.0.6'
 # Sharing
 gem 'shareable', '~> 1.1.4'
 
+# Mailing
+gem 'mandrill-api', '~> 1.0.53'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

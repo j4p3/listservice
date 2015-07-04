@@ -62,6 +62,7 @@ GEM
     debug_inspector (0.0.2)
     disqus_rails (0.0.6)
     erubis (2.7.0)
+    excon (0.45.3)
     execjs (2.5.2)
     filterrific (2.0.4)
       rails (>= 3.1.0)
@@ -82,6 +83,9 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
+    mandrill-api (1.0.53)
+      excon (>= 0.16.0, < 1.0)
+      json (>= 1.7.7, < 2.0)
     mime-types (2.4.3)
     mini_portile (0.6.2)
     minitest (5.6.0)
@@ -190,6 +194,7 @@ DEPENDENCIES
   foreman
   friendly_id (~> 5.1.0)
   jquery-rails
+  mandrill-api (~> 1.0.53)
   neat (~> 1.7.2)
   newrelic_rpm (~> 3.11.2.286)
   nokogiri (~> 1.6.6.2)

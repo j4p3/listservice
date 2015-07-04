@@ -22,5 +22,16 @@ module Listservice
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    # Mailer settings
+    config.action_mailer.smtp_settings = {
+        :address   => "smtp.mandrillapp.com",
+        :port      => 25, # ports 587 and 2525 are also supported with STARTTLS
+        :enable_starttls_auto => true, # detects and uses STARTTLS
+        :user_name =>      ENV['MANDRILL_USERNAME'],
+        :password =>       ENV['MANDRILL_APIKEY'], # SMTP password is any valid API key
+        :authentication => 'login' # Mandrill supports 'plain' or 'login'
+      }
+      ActionMailer::Base.delivery_method = :smtp
   end
 end
