@@ -26,14 +26,13 @@ module Api
           head :unauthorized
         else
           unless Post.find_by(sent_date: Date.today)
-            @post = Post.create(post_params)
+            @post = Post.new(post_params)
             @post.sent_date = Date.today
-            @post.body = @post.body.slice(0..@post.body.rindex('--')-1)
+            @post.body = @post.body[0..@post.body.rindex('--')-1]
             offset = @post.body.rindex('@')
-            @post.email = post.body.slice(post.body.rindex(/\n/, offset),
-                          post.body.index(/\n/, offset)).strip
+            @post.email = @post.body[@post.body.rindex(/\n/, offset)..@post.body.index(/\n/, offset)].strip
             @post.save
-            PostMailer.welcome(@post)
+            PostsMailer.post_create(@post)
             render json: @post, status: :created
           else
             head :unprocessable_entity

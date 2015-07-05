@@ -24,6 +24,9 @@ module Listservice
     config.active_record.raise_in_transactional_callbacks = true
 
     # Mailer settings
+    config.email = ActiveSupport::OrderedOptions.new
+    config.email.username = ENV['MANDRILL_USERNAME']
+    config.email.api_key = ENV['MANDRILL_APIKEY']
     config.action_mailer.smtp_settings = {
         :address   => "smtp.mandrillapp.com",
         :port      => 25, # ports 587 and 2525 are also supported with STARTTLS
