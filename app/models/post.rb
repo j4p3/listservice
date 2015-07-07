@@ -40,7 +40,7 @@ class Post < ActiveRecord::Base
       'week' => where("sent_date > ?", Date.today - 1.week),
       'month' => where("sent_date > ?", Date.today - 1.month),
       'year' => where("sent_date > ?", Date.today - 1.year),
-      'all' => where("sent_date < ?", Date.today)
+      'all' => where("sent_date < ?", Date.tomorrow)
     }
     span_map[span] || span_map[:all]
   end
