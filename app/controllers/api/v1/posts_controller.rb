@@ -32,7 +32,6 @@ module Api
             offset = @post.body.rindex('@')
             @post.email = @post.body[@post.body.rindex(/\n/, offset)..@post.body.index(/\n/, offset)].strip
             @post.save
-            PostsMailer.post_create(@post)
             render json: @post, status: :created
           else
             head :unprocessable_entity
